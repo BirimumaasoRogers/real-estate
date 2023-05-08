@@ -121,7 +121,7 @@ class PropertyController extends Controller
             {
                 $currentDate = Carbon::now()->toDateString();
                 $galimage['name'] = 'gallary-'.$currentDate.'-'.uniqid().'.'.$images->getClientOriginalExtension();
-                $galimage['size'] = $images->getClientSize();
+                $galimage['size'] = $images->getSize();
                 $galimage['property_id'] = $property->id;
                 
                 if(!Storage::disk('public')->exists('property/gallery')){
@@ -257,7 +257,7 @@ class PropertyController extends Controller
                 {
                     $currentDate = Carbon::now()->toDateString();
                     $galimage['name'] = 'gallary-'.$currentDate.'-'.uniqid().'.'.$images->getClientOriginalExtension();
-                    $galimage['size'] = $images->getClientSize();
+                    $galimage['size'] = $images->getSize();
                     $galimage['property_id'] = $property->id;
                     
                     if(!Storage::disk('public')->exists('property/gallery')){

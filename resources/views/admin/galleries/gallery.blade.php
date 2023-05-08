@@ -27,7 +27,7 @@
                     <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
                         @foreach($galleries as $gallery)
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                <a href="{{Storage::url('gallery/'.$gallery->image)}}" data-sub-html="Demo Description">
+                                <a href="{{Storage::url('gallery/'.$gallery->image)}}" data-sub-html="Gallery Images">
                                     <img class="img-responsive thumbnail" src="{{Storage::url('gallery/'.$gallery->image)}}">
                                 </a>
                             </div>
@@ -43,14 +43,13 @@
                     <h2>UPLOAD GALLERY IMAGE</h2>
                 </div>
                 <div class="body">
-                    <form action="{{route('admin.galleries.store')}}" method="POST" id="frmFileUpload" class="dropzone">
+                    <form action="{{route('admin.galleries.store')}}" method="POST" id="frmFileUpload" class="dropzone" enctype="multipart/form-data">
                         @csrf
                         <div class="dz-message">
                             <div class="drag-icon-cph">
                                 <i class="material-icons">touch_app</i>
                             </div>
                             <h3>Drop files here or click to upload.</h3>
-                            <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
                         </div>
                         <div class="fallback">
                             <input name="file" type="file" multiple />
@@ -58,10 +57,10 @@
                         <input type="hidden" name="albumid" value="{{$album_id}}">
                     </form>
                     
-                    <a href="{{route('admin.album.gallery',$album_id)}}" class="btn btn-indigo btn-lg m-t-15 waves-effect" style="width:100%">
-                        <i class="material-icons">refresh</i>
-                        <span>Refresh</span>
-                    </a>
+                    <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
+                        <i class="material-icons">save</i>
+                        <span>SAVE</span>
+                    </button>
 
                 </div>
             </div>

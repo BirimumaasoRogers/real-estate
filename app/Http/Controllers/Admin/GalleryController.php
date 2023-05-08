@@ -51,7 +51,7 @@ class GalleryController extends Controller
         if(isset($image)){
             $currentDate = Carbon::now()->toDateString();
             $imagename = 'gallery-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-            $imagesize = $image->getClientSize();
+            $imagesize = $image->getClient();
             $imagetype = $image->getClientMimeType();
 
             if(!Storage::disk('public')->exists('gallery')){

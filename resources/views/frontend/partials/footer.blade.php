@@ -6,7 +6,7 @@
                 @if(isset($footersettings[0]) && $footersettings[0]['aboutus'])
                     <p class="grey-text text-lighten-4">{{ $footersettings[0]['aboutus'] }}</p>
                 @else
-                    <p class="grey-text text-lighten-4">Real estate company description goes here.</p>
+                    <p class="grey-text text-lighten-4">Mi Casa Homes is a real estate company that brings the best properties around the country to your fingertips.</p>
                 @endif
             </div>
             <div class="col m6 s12">
